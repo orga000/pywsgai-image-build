@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WildGuard - Protect Our Wildlife</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>La Belle France - L'Art de Vivre à la Française</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2d6a4f;
-            --primary-light: #40916c;
-            --accent: #d4a373;
-            --dark: #1b4332;
-            --text: #2d3436;
-            --gray: #636e72;
-            --light: #f8f9f7;
+            --primary: #2c3e50;
+            --primary-light: #34495e;
+            --accent: #e74c3c;
+            --accent-light: #c0392b;
+            --gold: #f39c12;
+            --text: #2c3e50;
+            --gray: #7f8c8d;
+            --light: #ecf0f1;
             --white: #ffffff;
+            --blue: #3498db;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; line-height: 1.7; color: var(--text); }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.7; 
+            color: var(--text); 
+            overflow-x: hidden;
+        }
 
-        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -37,30 +43,31 @@
             background: rgba(255,255,255,0.98);
             box-shadow: 0 2px 20px rgba(0,0,0,0.08);
         }
-        .navbar.scrolled .logo, .navbar.scrolled .nav-links a { color: var(--dark); }
+        .navbar.scrolled .logo, .navbar.scrolled .nav-links a { color: var(--primary); }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--white);
             text-decoration: none;
+            font-family: 'Playfair Display', serif;
         }
-        .logo i { color: var(--accent); }
+        .logo i { color: var(--gold); }
         .nav-links { display: flex; list-style: none; gap: 2rem; }
         .nav-links a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover { color: var(--gold); }
 
-        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
             overflow: hidden;
         }
@@ -68,8 +75,8 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: url('https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=1920') center/cover;
-            opacity: 0.3;
+            background: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920') center/cover;
+            opacity: 0.25;
             z-index: 0;
         }
         #particles { 
@@ -85,7 +92,7 @@
             position: relative;
             text-align: center;
             color: var(--white);
-            max-width: 750px;
+            max-width: 800px;
             padding: 0 2rem;
             z-index: 2;
             pointer-events: none;
@@ -93,18 +100,24 @@
         .hero-content * { pointer-events: auto; }
         .hero-badge {
             display: inline-block;
-            background: rgba(212,163,115,0.2);
-            border: 1px solid var(--accent);
-            color: var(--accent);
+            background: rgba(243,156,18,0.2);
+            border: 1px solid var(--gold);
+            color: var(--gold);
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 500;
             margin-bottom: 1.5rem;
         }
-        .hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
-        .hero h1 span { color: var(--accent); }
-        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+        .hero h1 { 
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            margin-bottom: 1.5rem; 
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero h1 span { color: var(--gold); }
+        .hero p { font-size: 1.15rem; opacity: 0.95; margin-bottom: 2rem; }
         .btn {
             padding: 0.9rem 1.8rem;
             border-radius: 8px;
@@ -117,170 +130,199 @@
             margin: 0.4rem;
         }
         .btn-primary {
-            background: var(--accent);
-            color: var(--dark);
+            background: var(--gold);
+            color: var(--white);
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,163,115,0.4); }
+        .btn-primary:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(243,156,18,0.4); 
+        }
         .btn-outline { border: 2px solid var(--white); color: var(--white); }
-        .btn-outline:hover { background: var(--white); color: var(--dark); }
+        .btn-outline:hover { background: var(--white); color: var(--primary); }
 
-        /* Stats */
         .stats { background: var(--white); padding: 4rem 5%; }
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             text-align: center;
         }
         .stat-card {
-            padding: 1.5rem;
+            padding: 1.8rem;
             border-radius: 12px;
             background: var(--light);
-            border: 1px solid #e8e8e8;
+            border: 1px solid #e0e0e0;
             transition: transform 0.3s;
         }
         .stat-card:hover { transform: translateY(-5px); }
         .stat-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 0.8rem;
+            margin: 0 auto 1rem;
             color: var(--white);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         .stat-number {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary);
+            font-family: 'Playfair Display', serif;
         }
-        .stat-label { color: var(--gray); font-size: 0.85rem; }
+        .stat-label { color: var(--gray); font-size: 0.9rem; }
 
-        /* Section Common */
-        .section-header { text-align: center; max-width: 550px; margin: 0 auto 2.5rem; }
+        .section-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
         .section-badge {
             display: inline-block;
-            background: rgba(45,106,79,0.1);
-            color: var(--primary);
+            background: rgba(231,76,60,0.1);
+            color: var(--accent);
             padding: 0.4rem 1rem;
             border-radius: 6px;
             font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 0.8rem;
         }
-        .section-header h2 { font-size: 2.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.8rem; }
-        .section-header p { color: var(--gray); }
+        .section-header h2 { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            color: var(--text); 
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .section-header p { color: var(--gray); font-size: 1.05rem; }
 
-        /* Species */
-        .species { padding: 5rem 5%; background: var(--light); }
-        .species-grid {
+        .attractions { padding: 5rem 5%; background: var(--light); }
+        .attractions-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        .species-card {
+        .attraction-card {
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            height: 340px;
+            height: 360px;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .species-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .species-card:hover img { transform: scale(1.1); }
-        .species-overlay {
+        .attraction-card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s; 
+        }
+        .attraction-card:hover img { transform: scale(1.1); }
+        .attraction-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 1.2rem;
-            background: linear-gradient(transparent, rgba(27,67,50,0.95));
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(44,62,80,0.95));
             color: var(--white);
             transform: translateY(30px);
             transition: transform 0.4s;
         }
-        .species-card:hover .species-overlay { transform: translateY(0); }
-        .species-status {
+        .attraction-card:hover .attraction-overlay { transform: translateY(0); }
+        .attraction-badge {
             display: inline-block;
-            padding: 0.2rem 0.6rem;
+            padding: 0.3rem 0.7rem;
             border-radius: 4px;
             font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
+            background: var(--gold);
         }
-        .status-critical { background: #c0392b; }
-        .status-endangered { background: #d35400; }
-        .status-vulnerable { background: #f39c12; color: var(--dark); }
-        .species-overlay h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.2rem; }
-        .species-overlay p { font-size: 0.8rem; opacity: 0.9; }
+        .attraction-overlay h3 { 
+            font-size: 1.2rem; 
+            font-weight: 600; 
+            margin-bottom: 0.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .attraction-overlay p { font-size: 0.85rem; opacity: 0.9; }
 
-        /* Actions */
-        .actions { padding: 5rem 5%; background: var(--white); }
-        .actions-grid {
+        .experiences { padding: 5rem 5%; background: var(--white); }
+        .experiences-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 950px;
+            gap: 1.8rem;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        .action-card {
+        .experience-card {
             background: var(--light);
             border-radius: 12px;
-            padding: 1.8rem;
+            padding: 2rem;
             text-align: center;
             transition: all 0.3s;
-            border: 1px solid #e8e8e8;
+            border: 1px solid #e0e0e0;
         }
-        .action-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(45,106,79,0.1);
-            border-color: var(--primary);
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(231,76,60,0.15);
+            border-color: var(--accent);
         }
-        .action-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
+        .experience-icon {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--blue) 0%, #2980b9 100%);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.2rem;
             color: var(--white);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
-        .action-card h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
-        .action-card p { color: var(--gray); font-size: 0.85rem; }
+        .experience-card h3 { 
+            font-size: 1.1rem; 
+            font-weight: 600; 
+            color: var(--text); 
+            margin-bottom: 0.6rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .experience-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
 
-        /* Newsletter */
         .newsletter {
-            padding: 4rem 5%;
-            background: var(--dark);
+            padding: 4.5rem 5%;
+            background: var(--primary);
             text-align: center;
             color: var(--white);
         }
-        .newsletter h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.8rem; }
-        .newsletter p { opacity: 0.8; margin-bottom: 1.5rem; }
-        .newsletter-form { display: flex; gap: 0.8rem; max-width: 420px; margin: 0 auto; }
+        .newsletter h2 { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .newsletter p { opacity: 0.85; margin-bottom: 1.8rem; font-size: 1.05rem; }
+        .newsletter-form { 
+            display: flex; 
+            gap: 0.8rem; 
+            max-width: 450px; 
+            margin: 0 auto; 
+        }
         .newsletter-form input {
             flex: 1;
-            padding: 0.9rem 1.2rem;
+            padding: 1rem 1.3rem;
             border: none;
             border-radius: 8px;
             font-size: 0.95rem;
             outline: none;
         }
         .newsletter-form button {
-            padding: 0.9rem 1.3rem;
-            background: var(--accent);
-            color: var(--dark);
+            padding: 1rem 1.5rem;
+            background: var(--gold);
+            color: var(--white);
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -289,55 +331,72 @@
         }
         .newsletter-form button:hover { transform: scale(1.05); }
 
-        /* Footer */
-        footer { background: #1a1a1a; color: var(--white); padding: 3rem 5% 1.5rem; }
+        footer { background: #1a1a1a; color: var(--white); padding: 3.5rem 5% 1.5rem; }
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 0 auto 2rem;
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto 2.5rem;
         }
-        .footer-brand p { color: rgba(255,255,255,0.6); margin: 0.8rem 0; font-size: 0.85rem; }
-        .social-links { display: flex; gap: 0.6rem; }
+        .footer-brand .logo { font-size: 1.5rem; }
+        .footer-brand p { 
+            color: rgba(255,255,255,0.6); 
+            margin: 1rem 0; 
+            font-size: 0.9rem; 
+            line-height: 1.7;
+        }
+        .social-links { display: flex; gap: 0.7rem; margin-top: 1.2rem; }
         .social-links a {
-            width: 36px;
-            height: 36px;
-            background: var(--primary);
+            width: 38px;
+            height: 38px;
+            background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            transition: transform 0.3s;
+            transition: all 0.3s;
         }
-        .social-links a:hover { transform: translateY(-3px); background: var(--primary-light); }
-        .footer-column h4 { font-size: 0.95rem; margin-bottom: 0.8rem; color: var(--accent); }
+        .social-links a:hover { 
+            transform: translateY(-3px); 
+            background: var(--gold); 
+        }
+        .footer-column h4 { 
+            font-size: 1rem; 
+            margin-bottom: 1rem; 
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
         .footer-column ul { list-style: none; }
-        .footer-column li { margin-bottom: 0.5rem; }
-        .footer-column a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
-        .footer-column a:hover { color: var(--accent); }
+        .footer-column li { margin-bottom: 0.6rem; }
+        .footer-column a { 
+            color: rgba(255,255,255,0.6); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            transition: color 0.3s; 
+        }
+        .footer-column a:hover { color: var(--gold); }
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.5rem;
+            padding-top: 1.8rem;
             text-align: center;
             color: rgba(255,255,255,0.5);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
-        /* Responsive */
         @media (max-width: 992px) {
-            .hero h1 { font-size: 2.4rem; }
-            .stats-grid, .species-grid { grid-template-columns: repeat(2, 1fr); }
-            .actions-grid { grid-template-columns: 1fr 1fr; }
+            .hero h1 { font-size: 2.6rem; }
+            .stats-grid, .attractions-grid { grid-template-columns: repeat(2, 1fr); }
+            .experiences-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 1.9rem; }
-            .section-header h2 { font-size: 1.7rem; }
-            .species-grid, .actions-grid { grid-template-columns: 1fr; }
-            .species-card { height: 280px; }
+            .hero h1 { font-size: 2rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .attractions-grid, .experiences-grid { grid-template-columns: 1fr; }
+            .attraction-card { height: 300px; }
             .newsletter-form { flex-direction: column; }
             .footer-grid { grid-template-columns: 1fr; }
         }
@@ -345,24 +404,24 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="#" class="logo"><i class="fas fa-paw"></i> WildGuard</a>
+        <a href="#" class="logo"><i class="fas fa-crown"></i> La Belle France</a>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#species">Species</a></li>
-            <li><a href="#actions">Take Action</a></li>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#attractions">Attractions</a></li>
+            <li><a href="#experiences">Expériences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="hero">
+    <section id="accueil" class="hero">
         <canvas id="particles"></canvas>
         <div class="hero-content">
-            <span class="hero-badge">🌍 Protecting Wildlife Since 2010</span>
-            <h1>Every Species <span>Matters</span> in Our World</h1>
-            <p>Join us in our mission to protect endangered wildlife and preserve biodiversity for future generations.</p>
+            <span class="hero-badge">🇫🇷 Découvrez la France Authentique</span>
+            <h1>L'Art de Vivre <span>à la Française</span></h1>
+            <p>Plongez dans l'élégance, la culture et la gastronomie qui font de la France une destination unique au monde.</p>
             <div>
-                <a href="#actions" class="btn btn-primary"><i class="fas fa-heart"></i> Make a Donation</a>
-                <a href="#species" class="btn btn-outline"><i class="fas fa-paw"></i> Learn More</a>
+                <a href="#attractions" class="btn btn-primary"><i class="fas fa-compass"></i> Explorer</a>
+                <a href="#experiences" class="btn btn-outline"><i class="fas fa-heart"></i> Découvrir</a>
             </div>
         </div>
     </section>
@@ -370,171 +429,201 @@
     <section class="stats">
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Countries Protected</div>
+                <div class="stat-icon"><i class="fas fa-landmark"></i></div>
+                <div class="stat-number">45</div>
+                <div class="stat-label">Sites UNESCO</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon"><i class="fas fa-paw"></i></div>
-                <div class="stat-number">1M+</div>
-                <div class="stat-label">Animals Saved</div>
+                <div class="stat-icon"><i class="fas fa-wine-glass-alt"></i></div>
+                <div class="stat-number">300+</div>
+                <div class="stat-label">Fromages Artisanaux</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon"><i class="fas fa-tree"></i></div>
-                <div class="stat-number">500K</div>
-                <div class="stat-label">Acres Preserved</div>
+                <div class="stat-icon"><i class="fas fa-palette"></i></div>
+                <div class="stat-number">1200+</div>
+                <div class="stat-label">Musées d'Art</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon"><i class="fas fa-users"></i></div>
-                <div class="stat-number">100K+</div>
-                <div class="stat-label">Active Supporters</div>
+                <div class="stat-number">90M</div>
+                <div class="stat-label">Visiteurs Annuels</div>
             </div>
         </div>
     </section>
 
-    <section id="species" class="species">
+    <section id="attractions" class="attractions">
         <div class="section-header">
-            <span class="section-badge">Endangered Species</span>
-            <h2>Wildlife We're Fighting to Protect</h2>
-            <p>These magnificent creatures are facing extinction. Learn about them and how you can help.</p>
+            <span class="section-badge">Destinations Iconiques</span>
+            <h2>Trésors de la France</h2>
+            <p>Des monuments emblématiques aux villages pittoresques, découvrez les merveilles qui font battre le cœur de la France.</p>
         </div>
-        <div class="species-grid">
-            <div class="species-card">
-                <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=500" alt="Giant Panda">
-                <div class="species-overlay">
-                    <span class="species-status status-vulnerable">Vulnerable</span>
-                    <h3>Giant Panda</h3>
-                    <p>Only 1,800 remain in the wild bamboo forests of China.</p>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=500" alt="Tour Eiffel">
+                <div class="attraction-overlay">
+                    <span class="attraction-badge">Paris</span>
+                    <h3>Tour Eiffel</h3>
+                    <p>Le symbole éternel de Paris et de la France entière.</p>
                 </div>
             </div>
-            <div class="species-card">
-                <img src="https://images.unsplash.com/photo-1551316679-9c6ae9dec224?w=500" alt="Siberian Tiger">
-                <div class="species-overlay">
-                    <span class="species-status status-endangered">Endangered</span>
-                    <h3>Siberian Tiger</h3>
-                    <p>Fewer than 500 in the wild. The largest of all wild cats.</p>
+            <div class="attraction-card">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500" alt="Paris">
+                <div class="attraction-overlay">
+                    <span class="attraction-badge">Île-de-France</span>
+                    <h3>Champs-Élysées</h3>
+                    <p>L'avenue la plus célèbre du monde.</p>
                 </div>
             </div>
-            <div class="species-card">
-                <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=500" alt="African Elephant">
-                <div class="species-overlay">
-                    <span class="species-status status-endangered">Endangered</span>
-                    <h3>African Elephant</h3>
-                    <p>Poaching claims 20,000 elephants annually for ivory.</p>
+            <div class="attraction-card">
+                <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=500" alt="Versailles">
+                <div class="attraction-overlay">
+                    <span class="attraction-badge">Versailles</span>
+                    <h3>Château de Versailles</h3>
+                    <p>La splendeur royale française à son apogée.</p>
                 </div>
             </div>
-            <div class="species-card">
-                <img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?w=500" alt="Sea Turtle">
-                <div class="species-overlay">
-                    <span class="species-status status-critical">Critical</span>
-                    <h3>Sea Turtle</h3>
-                    <p>6 of 7 species threatened by ocean pollution.</p>
+            <div class="attraction-card">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=500" alt="Provence">
+                <div class="attraction-overlay">
+                    <span class="attraction-badge">Provence</span>
+                    <h3>Champs de Lavande</h3>
+                    <p>Les paysages violets enchanteurs du sud.</p>
+                </div>
+            </div>
+            <div class="attraction-card">
+                <img src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=500" alt="Mont Saint-Michel">
+                <div class="attraction-overlay">
+                    <span class="attraction-badge">Normandie</span>
+                    <h3>Mont Saint-Michel</h3>
+                    <p>L'abbaye mystique sur son îlot rocheux.</p>
+                </div>
+            </div>
+            <div class="attraction-card">
+                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=500" alt="Côte d'Azur">
+                <div class="attraction-overlay">
+                    <span class="attraction-badge">Côte d'Azur</span>
+                    <h3>Nice & Monaco</h3>
+                    <p>Le glamour méditerranéen à la française.</p>
+                </div>
+            </div>
+            <div class="attraction-card">
+                <img src="https://images.unsplash.com/photo-1550340499-a6c60fc8287c?w=500" alt="Loire">
+                <div class="attraction-overlay">
+                    <span class="attraction-badge">Val de Loire</span>
+                    <h3>Châteaux de la Loire</h3>
+                    <p>Des joyaux architecturaux Renaissance.</p>
+                </div>
+            </div>
+            <div class="attraction-card">
+                <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=500" alt="Alpes">
+                <div class="attraction-overlay">
+                    <span class="attraction-badge">Alpes</span>
+                    <h3>Mont Blanc</h3>
+                    <p>Le toit de l'Europe occidentale.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="actions" class="actions">
+    <section id="experiences" class="experiences">
         <div class="section-header">
-            <span class="section-badge">Get Involved</span>
-            <h2>How You Can Help</h2>
-            <p>Every action counts. Here are meaningful ways you can contribute to wildlife conservation.</p>
+            <span class="section-badge">Vivre à la Française</span>
+            <h2>Expériences Inoubliables</h2>
+            <p>Immergez-vous dans la culture française à travers des expériences authentiques et mémorables.</p>
         </div>
-        <div class="actions-grid">
-            <div class="action-card">
-                <div class="action-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                <h3>Make a Donation</h3>
-                <p>Your support directly funds conservation programs worldwide.</p>
+        <div class="experiences-grid">
+            <div class="experience-card">
+                <div class="experience-icon"><i class="fas fa-utensils"></i></div>
+                <h3>Gastronomie Raffinée</h3>
+                <p>Savourez la haute cuisine française dans des restaurants étoilés ou des bistrots authentiques.</p>
             </div>
-            <div class="action-card">
-                <div class="action-icon"><i class="fas fa-users"></i></div>
-                <h3>Volunteer With Us</h3>
-                <p>Join our global network of volunteers for wildlife protection.</p>
+            <div class="experience-card">
+                <div class="experience-icon"><i class="fas fa-wine-bottle"></i></div>
+                <h3>Dégustation de Vins</h3>
+                <p>Explorez les vignobles prestigieux de Bordeaux, Bourgogne et Champagne.</p>
             </div>
-            <div class="action-card">
-                <div class="action-icon"><i class="fas fa-share-alt"></i></div>
-                <h3>Spread Awareness</h3>
-                <p>Share our mission and educate others about conservation.</p>
+            <div class="experience-card">
+                <div class="experience-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3>Art & Culture</h3>
+                <p>Visitez le Louvre, Orsay et découvrez l'héritage artistique français.</p>
             </div>
-            <div class="action-card">
-                <div class="action-icon"><i class="fas fa-shopping-bag"></i></div>
-                <h3>Shop Responsibly</h3>
-                <p>Avoid products from endangered species.</p>
+            <div class="experience-card">
+                <div class="experience-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h3>Mode & Shopping</h3>
+                <p>Parcourez les boutiques de luxe et les marchés aux puces parisiens.</p>
             </div>
-            <div class="action-card">
-                <div class="action-icon"><i class="fas fa-paw"></i></div>
-                <h3>Adopt an Animal</h3>
-                <p>Symbolically adopt and support endangered animals.</p>
+            <div class="experience-card">
+                <div class="experience-icon"><i class="fas fa-music"></i></div>
+                <h3>Spectacles & Opéra</h3>
+                <p>Assistez à des représentations à l'Opéra Garnier ou au Moulin Rouge.</p>
             </div>
-            <div class="action-card">
-                <div class="action-icon"><i class="fas fa-bullhorn"></i></div>
-                <h3>Advocate for Change</h3>
-                <p>Support legislation that protects wildlife habitats.</p>
+            <div class="experience-card">
+                <div class="experience-icon"><i class="fas fa-bicycle"></i></div>
+                <h3>Balades Romantiques</h3>
+                <p>Promenez-vous le long de la Seine ou dans les jardins du Luxembourg.</p>
             </div>
         </div>
     </section>
 
     <section class="newsletter">
-        <h2>Stay Connected</h2>
-        <p>Subscribe to our newsletter for the latest updates on wildlife conservation.</p>
+        <h2>Restez Connecté</h2>
+        <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et offres exclusives.</p>
         <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
+            <input type="email" placeholder="Votre adresse email" required>
+            <button type="submit">S'inscrire</button>
         </form>
     </section>
 
     <footer id="contact">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="#" class="logo"><i class="fas fa-paw"></i> WildGuard</a>
-                <p>Dedicated to protecting endangered wildlife and preserving biodiversity for future generations.</p>
+                <a href="#" class="logo"><i class="fas fa-crown"></i> La Belle France</a>
+                <p>Votre guide pour découvrir l'authenticité, l'élégance et la beauté de la France. Vivez des moments inoubliables dans le pays de l'amour et de la culture.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-column">
-                <h4>Quick Links</h4>
+                <h4>Navigation</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#species">Species</a></li>
-                    <li><a href="#actions">Get Involved</a></li>
-                    <li><a href="#">News</a></li>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#attractions">Attractions</a></li>
+                    <li><a href="#experiences">Expériences</a></li>
+                    <li><a href="#">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Support</h4>
+                <h4>Destinations</h4>
                 <ul>
-                    <li><a href="#">Donate</a></li>
-                    <li><a href="#">Adopt</a></li>
-                    <li><a href="#">Volunteer</a></li>
-                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Paris</a></li>
+                    <li><a href="#">Provence</a></li>
+                    <li><a href="#">Côte d'Azur</a></li>
+                    <li><a href="#">Normandie</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Contact</h4>
+                <h4>Informations</h4>
                 <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">À Propos</a></li>
+                    <li><a href="#">Contact</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Confidentialité</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 WildGuard. All rights reserved. Together, we protect our planet's wildlife.</p>
+            <p>&copy; 2026 La Belle France. Tous droits réservés. Fait avec ❤️ pour l'amour de la France.</p>
         </div>
     </footer>
 
     <script>
-        // Navbar scroll
         window.addEventListener('scroll', () => {
             document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Particle animation
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         const hero = document.querySelector('.hero');
@@ -554,33 +643,30 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1;
-                this.vx = (Math.random() - 0.5) * 0.3;
-                this.vy = (Math.random() - 0.5) * 0.3;
+                this.size = Math.random() * 2.5 + 1;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
             }
             update() {
-                // 鼠标推开效果
                 if (mouse.x != null) {
                     let dx = this.x - mouse.x;
                     let dy = this.y - mouse.y;
                     let dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 100) {
-                        let force = (100 - dist) / 100;
-                        this.x += (dx / dist) * force * 3;
-                        this.y += (dy / dist) * force * 3;
+                    if (dist < 120) {
+                        let force = (120 - dist) / 120;
+                        this.x += (dx / dist) * force * 4;
+                        this.y += (dy / dist) * force * 4;
                     }
                 }
                 this.x += this.vx;
                 this.y += this.vy;
-                // 边界反弹
                 if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-                // 保持在边界内
                 this.x = Math.max(0, Math.min(canvas.width, this.x));
                 this.y = Math.max(0, Math.min(canvas.height, this.y));
             }
             draw() {
-                ctx.fillStyle = 'rgba(212,163,115,0.8)';
+                ctx.fillStyle = 'rgba(255,255,255,0.7)';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
@@ -589,7 +675,7 @@
 
         function init() {
             particles = [];
-            const count = Math.floor((canvas.width * canvas.height) / 10000);
+            const count = Math.floor((canvas.width * canvas.height) / 9000);
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle());
             }
@@ -601,9 +687,9 @@
                     let dx = particles[a].x - particles[b].x;
                     let dy = particles[a].y - particles[b].y;
                     let dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
-                        ctx.strokeStyle = `rgba(212,163,115,${0.35 - dist/340})`;
-                        ctx.lineWidth = 0.8;
+                    if (dist < 130) {
+                        ctx.strokeStyle = `rgba(255,255,255,${0.3 - dist/450})`;
+                        ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
